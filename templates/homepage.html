@@ -1,9 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>UberMelon's MelonBook</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}UberMelon's MelonBook{% endblock %}
+
+{% block content %}
 	<h1>Ubermelon's Most Loved Melons</h1>
 	<img src='https://www.rareseeds.com/assets/1/14/DimRegular/Melon-Kiku-OML117-Esparto-MA-DSC08265.jpg'>
 	<form action='/get-name'>
@@ -11,5 +10,4 @@
 		What is your name? <input type="text" name="name" required>
 		<input type="submit">
 	</form>
-</body>
-</html>
+{% endblock %}
