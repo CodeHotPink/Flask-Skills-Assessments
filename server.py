@@ -37,9 +37,14 @@ MOST_LOVED_MELONS = {
 @app.route("/")
 def homepage():
     """homepage of the site"""
-    html = render_template("homepage.html")
-
     return render_template("homepage.html")
+
+@app.route("/get-name")
+def get_name():
+    form_name = request.args.get("name")
+    session["name"] = form_name.title()
+    return redirect("/top-melons")
+"""forgot that I have to return a redirect method thing"""
 
 """ Had to look up how to write beginning of route.
 I wrote '@route ("/top-melons"):' originally
