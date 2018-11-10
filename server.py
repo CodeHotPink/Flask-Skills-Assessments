@@ -1,4 +1,4 @@
-from flask import Flask, redirect, request, render_template, session
+from flask import Flask, redirect, request, render_template, session, flash
 # from flask_debugtoolbar import DebugToolbarExtension
 from jinja2 import StrictUndefined
 
@@ -37,7 +37,10 @@ MOST_LOVED_MELONS = {
 @app.route("/")
 def homepage():
     """homepage of the site"""
-    return render_template("homepage.html")
+    if session.get("name", 0) == 0:
+        return render_template("homepage.html")
+    else:
+        return redirect("/top-melons")
 
 @app.route("/get-name")
 def get_name():
@@ -51,9 +54,12 @@ I wrote '@route ("/top-melons"):' originally
 """
 @app.route("/top-melons")
 def show_top_melons():
-    """ rename MOST_LOVED_MELONS dictionary to use in render template """
+    """ shows most loved melons to user displaying name """
     melons = MOST_LOVED_MELONS
-    return render_template("top-melons.html",
+    if session.get("name", 0) == 0:
+        return redirect("/")
+    else:
+        return render_template("top-melons.html",
                             melons=melons)
 
 

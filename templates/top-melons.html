@@ -10,8 +10,8 @@
 <!-- remembered syntax to use loop correctly. played around a bit to get the dictionary to work the way I wantd to -->
 	{% for melon in melons %}
     <div class='melon-div'>
-        <h3>{{ melons[melon]["name"] }}</h3>
-        <h2>Loved {{melons[melon]["num_loves"]}} times.</h2>
+        <h3>{{ session["name"] }} this is a {{ melons[melon]["name"] }}</h3>
+        <h2>Loved <i>{{melons[melon]["num_loves"]}}</i> times.</h2>
         <img src='{{melons[melon]["img"]}}'>
     </div>
     {% endfor %}
