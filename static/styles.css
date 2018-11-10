@@ -1,3 +1,12 @@
+html {
+	background-color: #fff8dc; /*cornsilk*/
+}
+
+h1 {
+	font-family: sans-serif;
+	color: red;
+}
+
 img {
     height: 200px;
     width: 200px;
@@ -7,4 +16,17 @@ img {
     display: inline-block;
     padding: 10px;
     width: 205px;
+    border-color: green;
 }
+
+#top-melons {
+	border: solid 10px green;
+}
+
+#homepage {
+	display: block;
+	max-width: 500px;
+	margin: auto;
+}
+
+/*Had a pretty hard time with css. I forgot most of it. I had to look up prior lectures to figure it out. I did also use the developer tools in Chrome but that was for experiementing after I googled the correct names*/
