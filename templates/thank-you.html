@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Loved Melon{% endblock %}
+
+{% block content %}
+    <div class='melon-div'>
+    	<h1>Thank you, {{ session["name"] }}!</h1>
+	    <h3>You loved {{ melons[melon_id]["name"] }}! Great choice!</h3>
+	    <img id="top-melons" src='{{melons[melon]["img"]}}'>
+	    <h2>{{ melons[melon_id]["name"] }} now has <i>{{melons[melon]["num_loves"]}}</i> <span>class="heart"</span>></h2>
+
+    </div>
+
+{% endblock %}

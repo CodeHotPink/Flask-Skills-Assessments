@@ -4,6 +4,16 @@
 
 {% block content %}
 	<h1>Welcome, {{ session["name"] }}!</h1>
+    <form action="/love-melon" method="POST">
+        Melon Name:
+        <select name="melon_name">
+            {% for melon in melons %}
+            <option value={{ melon }}>{{ melons[melon]["name"] }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="I love me some melons!">
+    </form>
+
 	{% for melon in melons %}
     <div class='melon-div'>
         <h3>{{ session["name"] }} this is a {{ melons[melon]["name"] }}</h3>

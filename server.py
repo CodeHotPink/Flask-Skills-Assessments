@@ -62,6 +62,16 @@ def show_top_melons():
         return render_template("top-melons.html",
                             melons=melons)
 
+@app.route("/love-melon", methods = ["POST"])
+def add_love_to_melon():
+    """add love to melon from drop down"""
+    # form_info = request.
+    print(form_info)
+    melons = MOST_LOVED_MELONS
+    # melons[melon_id][num_loves] += 1
+    return render_template("thank-you.html",
+                            melons=melons,
+                            melon_id=melon_id)
 
 
 if __name__ == "__main__":
