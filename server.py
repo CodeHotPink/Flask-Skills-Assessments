@@ -34,18 +34,23 @@ MOST_LOVED_MELONS = {
     },
 }
 
-""" Had a hard time with setting up.
-looked up how to write beginning of route.
-I wrote '@route ("/top-melons"):'
-Remembered how to render_template, had no problem on that   with passing through variables as arguments.
+@app.route("/")
+def homepage():
+    """homepage of the site"""
+    html = render_template("homepage.html")
+
+    return render_template("homepage.html")
+
+""" Had to look up how to write beginning of route.
+I wrote '@route ("/top-melons"):' originally
 """
 @app.route("/top-melons")
 def show_top_melons():
+    """ rename MOST_LOVED_MELONS dictionary to use in render template """
     melons = MOST_LOVED_MELONS
     return render_template("top-melons.html",
                             melons=melons)
 
-# YOUR ROUTES GO HERE
 
 
 if __name__ == "__main__":
